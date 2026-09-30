@@ -36,3 +36,21 @@ catch (Exception ex)
 {
     Console.WriteLine($"Greska! {ex.Message}");
 }
+try
+{
+    booking.CancelAppointment("Uros", new DateTime(2027, 6, 15, 10, 0, 0));
+    Console.WriteLine("Termin je otkazan");
+}
+catch(Exception ex)
+{
+    Console.WriteLine($"Greska! {ex.Message}");
+}
+try
+{
+    booking.CancelAppointment("Uros", new DateTime(2027, 6, 15, 10, 0, 0));
+    Console.WriteLine("Termin je otkazan");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Greska! {ex.Message}");
+}

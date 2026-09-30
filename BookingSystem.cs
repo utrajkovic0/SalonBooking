@@ -49,5 +49,15 @@
             Appointment newAppointment = new Appointment(clientName,service, dateTime);
             appointments.Add(newAppointment);
         }
+
+        public void CancelAppointment(string clientName, DateTime dateTime)
+        {
+            Appointment appointment = appointments.FirstOrDefault(a => a.DateTime == dateTime && a.ClientName == clientName);
+            if (appointment == null)
+            {
+                throw new KeyNotFoundException("Rezervacija ne postoji!");
+            }
+            appointments.Remove(appointment);
+        }
     }
 }
