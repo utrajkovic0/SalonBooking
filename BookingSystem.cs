@@ -81,7 +81,6 @@
                 Console.WriteLine($"Nema zakazanih termina za datum {date}");
                 return;
             }
-            Console.WriteLine($"Termini za dan {date:dd.MM.yyyy}");
             foreach (var a in appointment)
             {
                 a.PrintInfo();
