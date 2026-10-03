@@ -61,3 +61,5 @@ booking.BookAppointment("Uros", "Sisanje", new DateTime(2027, 6, 15, 12, 0, 0));
 booking.ListAppointments();
 
 booking.ListAppointmentsByDate(new DateTime(2027, 6, 15));
+
+booking.PrintStatistics();

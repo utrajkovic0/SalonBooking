@@ -87,5 +87,25 @@
                 a.PrintInfo();
             }
         }
+
+        public void PrintStatistics()
+        {
+            if (appointments.Count == 0)
+            {
+                Console.WriteLine("Nema podataka za statistiku");
+                return ;
+            }
+
+            Console.WriteLine($"Ukupan broj zakazanih termina: {appointments.Count}");
+
+            Console.WriteLine($"Ukupan prihod: {appointments.Sum(a => a.Service.Price)} RSD");
+
+            var najtrazeniji = appointments
+                .GroupBy(a => a.Service.Name)
+                .OrderByDescending(g => g.Count())
+                .First();
+
+            Console.WriteLine($"Najtrazenija usluga je {najtrazeniji.Key} zakazana {najtrazeniji.Count()} puta");
+        }
     }
 }
