@@ -15,7 +15,7 @@
 
         public void PrintInfo()
         {
-            Console.WriteLine($"{ClientName} - {Service.Name} - {DateTime}");
+            Console.WriteLine($"{ClientName} - {Service.Name} - {DateTime:dd.MM.yyyy HH:mm}");
         }
     }
 }

@@ -54,3 +54,10 @@ catch (Exception ex)
 {
     Console.WriteLine($"Greska! {ex.Message}");
 }
+
+booking.BookAppointment("Filip", "Brijanje", new DateTime(2027, 6, 15, 10, 0, 0));
+booking.BookAppointment("Uros", "Sisanje", new DateTime(2027, 6, 15, 12, 0, 0));
+
+booking.ListAppointments();
+
+booking.ListAppointmentsByDate(new DateTime(2027, 6, 15));

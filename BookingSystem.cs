@@ -59,5 +59,33 @@
             }
             appointments.Remove(appointment);
         }
+
+        public void ListAppointments()
+        {
+            if(appointments.Count == 0)
+            {
+                Console.WriteLine("Nema zakazanih termina!");
+                return;
+            }
+            foreach(var appointment in appointments)
+            {
+                appointment.PrintInfo();
+            }
+        }
+
+        public void ListAppointmentsByDate(DateTime date)
+        {
+            List<Appointment> appointment = appointments.Where(a => a.DateTime.Date ==  date.Date).ToList();
+            if (appointment.Count == 0)
+            {
+                Console.WriteLine($"Nema zakazanih termina za datum {date}");
+                return;
+            }
+            Console.WriteLine($"Termini za dan {date:dd.MM.yyyy}");
+            foreach (var a in appointment)
+            {
+                a.PrintInfo();
+            }
+        }
     }
 }
